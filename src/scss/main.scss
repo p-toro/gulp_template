@@ -1,0 +1,41 @@
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+}
+
+ul,ol {
+  list-style: none;
+}
+
+// base
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
+// mixin
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// responsive
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
